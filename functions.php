@@ -4,16 +4,8 @@
  */
 function woodmart_child_enqueue_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( 'Version' ) );
-	//Carga de LightBox
-    /*
-    if(is_page("nosotros")) :
-        wp_enqueue_style( 'lightboxCSS', get_template_directory_uri().'/css/lightbox.min.css', array(), '2.11.3');
-    endif;
-	*/
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
-//este hook va a cargar todas las hojas de estilos que tengamos dentro del tema
-add_action('wp_enqueue_scripts', 'antojosfit_scripts_styles');
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 // Disable City
 add_filter( 'woocommerce_shipping_calculator_enable_city', '__return_false' );
