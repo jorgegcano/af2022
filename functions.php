@@ -303,3 +303,5 @@ function get_postal_codes(){
     
     return $result;
 }
+
+//Prueba functions
