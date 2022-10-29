@@ -14,16 +14,19 @@
   --fuentePrincipal : 'Josefin Sans', sans-serif;
   --fuenteSecundaria : 'Brandon Grotesque';
   /** Colores **/
-  --afPink: #F2B7E5;
-  --afBlue:#88DFF2;
-  --afRed: #F25D50;
-  --afBrown: #A6635D;
-  --afYellow: #F2B366;
-  --afGreen: #A4A672;
-  --afPurple: #9D7CA6;
+  /*--afPink: #F2B7E5;*/
+  --afPinkOriginal: #EF8BA9;
+  --afBlueOriginal:#79D5EF;
+  --afRedOriginal: #EE6F58;
+  --afBrownOriginal: #9A645C;
+  --afYellowOriginal: #FABD77;
+  --afGreenOriginal: #989F75;
+  --afPurpleOriginal: #9378A0;
+  --afPurpleOriginalHover: #7C6587;
   --afGrey: #F2F2F2;
   --afWhite: #F1F1F1;
-  --afBlackTitle: #080808
+  --afBlackTitle: #080808;
+  --white: #FFFFFF;
 }
 
 /*Globales*/
@@ -44,6 +47,14 @@ p,
 .font-alt,
 .title-alt {
   font-family: var(--fuenteSecundaria) !important;
+}
+
+p {
+  font-size: 15px!important;
+}
+
+.wd-entities-title {
+  font-size: 15px!important;
 }
 
 h1,
@@ -73,7 +84,7 @@ h6 {
 }
 
 .whb-header-bottom {
-  background-color: var(--afPink)!important;
+  background-color: var(--afPurpleOriginal)!important;
   padding: 2px 0;
 }
 
@@ -83,7 +94,7 @@ h6 {
 }
 
 .wd-cart-number {
-background-color: var(--afRed)!important;
+background-color: var(--afRedOriginal)!important;
 font-weight: bold!important;
 }
 /********/
@@ -152,6 +163,18 @@ font-weight: bold!important;
   }
 }
 
+.products.elements-grid {
+margin-bottom: 40px!important;
+}
+
+.wd-hover-quick .wd-add-btn>a {
+  background-color: var(--afPurpleOriginal)!important;
+}
+
+.tax-product_cat .main-page-wrapper {
+  margin-top: 40px;
+}
+
 /*Carrito*/
 .widget_shopping_cart .button.checkout.wc-forward{
   display: none;
@@ -160,6 +183,17 @@ font-weight: bold!important;
 .cart-info .wd-entities-title {
   font-size: 14px!important;
 }
+
+@media (max-width: 575px) { 
+  .cart-actions button {
+    margin-bottom: 10px;
+  }
+}
+
+.cart-totals-section {
+  margin-bottom: 40px;
+}
+
 
 #calc_shipping_country_field,
 #calc_shipping_state_field {
@@ -173,7 +207,17 @@ font-weight: bold!important;
   display: none;
 }
 
+.woocommerce-checkout .site-content {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 /*Botones*/
+
+.btn, .button, button {
+  border-radius: 5px!important;
+}
+
 #hero-icon span:hover {
   cursor: pointer;
 }
@@ -190,7 +234,7 @@ font-weight: bold!important;
 }
 
 .scrollToTop{
-  background-color: rgba(242, 179, 102, 0.9)!important;
+  background-color: var(--afPurpleOriginal)!important;
 }
 
 .scrollToTop::after{
@@ -198,6 +242,10 @@ font-weight: bold!important;
 }
 
 /*Widget Whatsapp*/
+.ht-ctc-chat {
+  z-index: 350!important;
+}
+
 .ht_ctc_style img{
 height: 40px!important;
 }
@@ -213,15 +261,7 @@ height: 40px!important;
 }
 /*****************/
 
-.button,
-.cookies-buttons .cookies-accept-btn,
-.wd-empty-mini-cart .btn {
-  border-radius: 5px!important;
-  box-shadow: none!important;
-}
-
 /*Single Product*/
-
 .nutritional-info-table {
   border-collapse: collapse;
 }
@@ -315,16 +355,17 @@ div.quantity input[type="button"]:hover {
 
 .slider-title:before {
   left: unset!important;
-  background-color: var(--afPink)!important;
+  background-color: var(--afPinkOriginal)!important;
 }
 /******************************/
 
 
 /*Pre Footer*/
-
 .wd-prefooter.woodmart-prefooter {
-  padding-top: 40px;
-  background-color: var(--afPink);
+  padding-top: 30px;
+  padding-bottom: 8px!important;
+  border-top: 3px solid #EFEFEF;
+  background-color: var(--white);
 }
 
 .logo-footer {
@@ -333,12 +374,22 @@ div.quantity input[type="button"]:hover {
   align-items: center;
 }
 
+.wd-prefooter.woodmart-prefooter hr {
+  color: var(--afBrownOriginal);
+  max-width: none!important;
+  opacity: 1!important;
+}
+
 .copyrights-wrapper.copyrights-centered {
   border: none;
-  background-color: var(--afPink);
+  color: var(--afBrownOriginal);
 }
 
 /*Footer*/
+footer {
+  background-color: var(--white);
+}
+
 .footer-column {
   margin-bottom: 0;
 }
@@ -352,8 +403,28 @@ div.quantity input[type="button"]:hover {
   padding-bottom: 0;
 }
 
+.rrss-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: var(--white);
+}
+
+.rrss-footer  .fa-facebook-square,
+.rrss-footer  .fa-instagram {
+  color: var(--afBrownOriginal);
+  padding: 0 5px; 
+}
+
+
+.copyrights-wrapper .min-footer {
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+}
+
 .argpd-footer {
-background-color: #ffffff;
+background-color: var(--white);
 border-top: 1px solid #6d6d6d
 }
 
@@ -367,6 +438,16 @@ border-top: 1px solid #6d6d6d
   cursor: pointer;
   text-decoration: underline;
 }
+
+#check_shipping_postcode {
+  margin-bottom: 20px;
+  color: var(--white);
+  background-color: var(--afPurpleOriginal);
+} 
+
+#check_shipping_postcode:hover {
+  background-color: var(--afPurpleOriginalHover);
+} 
 
 .soivigol-popup {
   position: fixed;

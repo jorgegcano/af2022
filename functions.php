@@ -255,7 +255,7 @@ function soivigol_insert_popup() {
         <span class="fas fa-truck"></span>
         <p>Inserta tu código postal</p>
         <input id="calc_shipping_postcode" type="text" style="margin-bottom:20px">
-        <button disabled class="btn" id="check_shipping_postcode" style="margin-bottom:20px">Comprobar</button>
+        <button disabled id="check_shipping_postcode" style="margin-bottom:20px">Comprobar</button>
         <p id="mensaje_zona_envio"></p>
         <?php if(is_front_page() || is_shop()) { ?>
         <script type="text/javascript">
@@ -295,5 +295,3 @@ function get_postal_codes(){
     
     return $result;
 }
-
-//Prueba functions
