@@ -79,7 +79,20 @@ h6 {
 /*****************************/
 
 /*Menú*/
-
+@media (min-width: 768px) { 
+  .current-menu-item::before {
+    font-family: "Font Awesome 5 Free"; 
+    content: "";
+    background-color: var(--afPurpleOriginal);
+    border-radius: 100px;
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }  
+}
 
 /*Header*/
 .wd-header-nav {
