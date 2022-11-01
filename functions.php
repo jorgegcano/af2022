@@ -254,8 +254,8 @@ function soivigol_insert_popup() {
        <div class="soivigol-popup-inner">
         <span class="fas fa-truck"></span>
         <p>Inserta tu código postal</p>
-        <input id="calc_shipping_postcode" type="text" style="margin-bottom:20px">
-        <button disabled id="check_shipping_postcode" style="margin-bottom:20px">Comprobar</button>
+        <input id="calc_shipping_postcode" type="text">
+        <button disabled id="check_shipping_postcode">Comprobar</button>
         <p id="mensaje_zona_envio"></p>
         <?php if(is_front_page() || is_shop()) { ?>
         <script type="text/javascript">

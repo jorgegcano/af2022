@@ -4,7 +4,7 @@
  Author:       XTemos
  Author URI:   http://xtemos.com
  Template:     woodmart
- Version:      1.0.0
+ Version:      1.0.1
  Text Domain:  woodmart
 */
 
@@ -16,10 +16,13 @@
   /** Colores **/
   /*--afPink: #F2B7E5;*/
   --afPinkOriginal: #EF8BA9;
+  --afPinkSecondary: #FCC0D0;
   --afBlueOriginal:#79D5EF;
+  --afBlueSecondary: #B5E3EE;
   --afRedOriginal: #EE6F58;
   --afBrownOriginal: #9A645C;
   --afYellowOriginal: #FABD77;
+  --afYellowSecondary: #FAD9B9;
   --afGreenOriginal: #989F75;
   --afPurpleOriginal: #9378A0;
   --afPurpleOriginalHover: #7C6587;
@@ -27,6 +30,10 @@
   --afWhite: #F1F1F1;
   --afBlackTitle: #080808;
   --white: #FFFFFF;
+  --success: #25CE71;
+  --info: #00BDE8;
+  --warning: #F9E52C;
+  --error: #FF502D;
 }
 
 /*Globales*/
@@ -109,45 +116,45 @@ font-weight: bold!important;
   padding-top: 0;
 }
 
-.info-banner-antojosfit>div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.home .wd-info-box {
+flex-direction: row;
 }
 
-.info-banner-antojosfit>div>div {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.home .wd-info-box .box-with-text {
+  margin-right: 20px;
 }
 
-.info-banner-antojosfit>div>div:nth-child(2) {
-  margin: 30px 0 30px;
+.home .wd-info-box .btn {
+  border-color: var(--afPurpleOriginal);
+  border-color: var(--afPurpleOriginalHover);
 }
 
-.info-banner-antojosfit .img-box {
-  width: 70%;
-  margin: 20px auto;
+.home .wd-info-box .btn:hover {
+  color: var(--afPurpleOriginalHover);
 }
 
-.info-banner-antojosfit h4 {
-  margin-bottom: 10px!important;
+.home .info-box-wrapper {
+  width: 100%;
 }
 
-@media (min-width: 768px) {
-  .img-box {
-      width: 90%;
+.home .wd-info-box  {
+  margin-bottom: 0!important;
+  padding: 20px 10%!important;
+}
+
+@media (min-width: 991px) { 
+
+  .info-box-container>div>div {
+    display: flex;
+    justify-content: center;
   }
 
-  .info-banner-antojosfit>div>div {
-      flex: 0 0 calc(33.3% - 20px);
-      min-height: 430px;
+  .home .info-box-wrapper {
+    flex: 0 0 33.3%
   }
 
-  .info-banner-antojosfit>div>div:nth-child(2) {
-      margin: 0;
+  .home .info-box-wrapper:not(:first-of-type){
+    border-left: 3px solid #EFEFEF;
   }
 }
 /***********************/
@@ -231,6 +238,14 @@ margin-bottom: 40px!important;
   0%   { transform: translateY(0); }
   50%  { transform: translateY(30px); }
   100% { transform: translateY(0); }
+}
+
+.view-details-btn {
+  border-top-right-radius: 5px!important;
+}
+
+.btn.btn-style-link {
+  border-radius: 0!important;
 }
 
 .scrollToTop{
@@ -362,27 +377,31 @@ div.quantity input[type="button"]:hover {
 
 /*Pre Footer*/
 .wd-prefooter.woodmart-prefooter {
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 8px!important;
   border-top: 3px solid #EFEFEF;
   background-color: var(--white);
 }
 
-.logo-footer {
+.wd-prefooter.woodmart-prefooter .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.wd-prefooter.woodmart-prefooter hr {
-  color: var(--afBrownOriginal);
-  max-width: none!important;
-  opacity: 1!important;
+.logo-footer {
+  max-width: 250px;
+}
+
+@media (min-width: 768px) { 
+  .logo-footer {
+    max-width: 350px;
+  }
 }
 
 .copyrights-wrapper.copyrights-centered {
-  border: none;
-  color: var(--afBrownOriginal);
+  background-color: #333;
+  color: var(--white);
 }
 
 /*Footer*/
@@ -390,12 +409,9 @@ footer {
   background-color: var(--white);
 }
 
-.footer-column {
-  margin-bottom: 0;
-}
-
 .footer-column.footer-column-1 {
-  margin-bottom: 30px;
+  margin: 25px 0;
+  margin-bottom: 60px;
 }
 
 .footer-sidebar {
@@ -407,25 +423,27 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
   color: var(--white);
 }
 
-.rrss-footer  .fa-facebook-square,
+.rrss-footer  .fa-facebook-f,
 .rrss-footer  .fa-instagram {
   color: var(--afBrownOriginal);
   padding: 0 5px; 
+}
+
+.rrss-footer  .fa-facebook-f {
+  font-size: 25px; 
+}
+
+.rrss-footer  .fa-instagram {
+  font-size: 30px;
 }
 
 
 .copyrights-wrapper .min-footer {
   padding-top: 5px!important;
   padding-bottom: 5px!important;
-}
-
-.argpd-footer {
-background-color: var(--white);
-border-top: 1px solid #6d6d6d
 }
 
 .argpd-footer li{
@@ -437,6 +455,10 @@ border-top: 1px solid #6d6d6d
 #abrir-pop-up {
   cursor: pointer;
   text-decoration: underline;
+}
+
+#calc_shipping_postcode {
+  margin-bottom: 20px;
 }
 
 #check_shipping_postcode {
@@ -546,6 +568,48 @@ border-top: 1px solid #6d6d6d
       display: block;
       grid-row: 2 / 4;
       grid-column: 3 / 4;
+  }
+}
+
+.info-banner-antojosfit>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info-banner-antojosfit>div>div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-banner-antojosfit>div>div:nth-child(2) {
+  margin: 30px 0 30px;
+}
+
+.info-banner-antojosfit .img-box {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.info-banner-antojosfit h4 {
+  margin-bottom: 10px!important;
+}
+
+@media (min-width: 768px) {
+  .img-box {
+      width: 90%;
+  }
+
+  .info-banner-antojosfit>div>div {
+      flex: 0 0 calc(33.3% - 20px);
+      min-height: 430px;
+  }
+
+  .info-banner-antojosfit>div>div:nth-child(2) {
+      margin: 0;
   }
 }
 */
