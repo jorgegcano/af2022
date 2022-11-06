@@ -387,6 +387,53 @@ div.quantity input[type="button"]:hover {
 }
 /******************************/
 
+/*Product Allergens Details*/
+.product-allergens-details {
+ display: flex;
+ margin-bottom: 40px;
+ width: 100%;
+}
+
+.product-allergens-details .data-container {
+  width: 100%;
+  padding: 0 15px;
+ }
+ 
+ .product-allergens-details .data-container h4 {
+  margin-bottom: 0;
+ }
+
+ .product-allergens-details ul {
+  padding-left: 0;
+ }
+
+.product-allergens-details li {
+  display:inline;
+  padding-left: 3px;
+  padding-right: 3px;
+ }
+
+ .product-allergens-details li:not(:last-of-type)::after {
+  content: ",";
+ }
+
+.product-allergens-details li,
+.product-allergens-details ul {
+  margin-bottom: 0;
+ }
+
+ .product-allergens-details .data-container span {
+  font-style: italic;
+  font-size: 12px;
+ }
+
+@media (min-width: 768px) {
+  .product-allergens-details {
+    flex: 0 0 50%;  
+    margin-bottom: 10px;
+   }
+}
+/*****************************/
 
 /*Pre Footer*/
 .wd-prefooter.woodmart-prefooter {
