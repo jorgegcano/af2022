@@ -4,7 +4,9 @@
     ?>
         <div style="margin: 30px 0 40px;" class="site-content shop-content-area col-lg-12 col-12 col-md-12 description-area-before content-with-products">
             <div class="d-flex flex-wrap">
-            <?php $args = array('post_type'=>'product');
+            <?php $args = array(
+                'post_type'=>'product',
+                'posts_per_page' => -1);
 
             $productos = new WP_Query($args);
 
