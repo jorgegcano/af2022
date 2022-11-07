@@ -1,4 +1,7 @@
-<?php get_header('Navigation Header'); the_content(); ?>
+    <?php 
+        get_header(); 
+        the_content(); 
+    ?>
         <div style="margin: 30px 0 40px;" class="site-content shop-content-area col-lg-12 col-12 col-md-12 description-area-before content-with-products">
             <div class="d-flex flex-wrap">
             <?php $args = array('post_type'=>'product');
@@ -39,4 +42,6 @@
                 <?php endwhile; wp_reset_postdata(); ?>
                     </div>
         </div>
-<?php get_footer(); ?>
+    <?php 
+        get_footer(); 
+    ?>

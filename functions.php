@@ -295,3 +295,10 @@ function get_postal_codes(){
     
     return $result;
 }
+
+add_action( 'get_header', function( $name ) {
+    add_filter( 'current_header', function() use ( $name ) {
+        // always return the same type, unlike WP
+        return (string) $name;
+    });
+});
