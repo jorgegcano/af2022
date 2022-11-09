@@ -418,9 +418,13 @@ div.quantity input[type="button"]:hover {
  width: 100%;
 }
 
+.product-allergens-details .image-container {
+  flex: 0 0 30%;
+}
+
 .product-allergens-details .data-container {
-  width: 100%;
   padding: 0 15px;
+  flex: 0 0 70%;
  }
  
  .product-allergens-details .data-container h4 {

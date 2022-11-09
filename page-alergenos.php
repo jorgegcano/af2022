@@ -16,7 +16,7 @@
 
                 <div class='product-allergens-details' product-id='<?php echo the_ID(); ?>'>
 
-                    <div class="image-container"> <?php the_post_thumbnail(); ?> </div>
+                    <div class="image-container"> <?php the_post_thumbnail('thumbnail'); ?> </div>
                     <div class="data-container">
                         <h4><?php the_title(); ?> </h4>
                         <div>
