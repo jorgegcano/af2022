@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( '0.0.8' ) );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( '0.0.9' ) );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -252,9 +252,15 @@ function soivigol_insert_popup() {
     ?>
     <div class="soivigol-popup">
        <div class="soivigol-popup-inner">
-        <span class="fas fa-truck"></span>
-        <p>Inserta tu código postal</p>
-        <input id="calc_shipping_postcode" type="text">
+            <div class="soivigol-popup-inner-title">
+                <span>COMPROBAR ZONA DE ENVÍO</span>
+                <span id="cerrar-pop-up" class="soivigol-close fas fa-times"></span>
+            </div>
+            <div class="soivigol-popup-inner-subtitle">
+                <span class="delivery-icon"><img src="<?php echo get_stylesheet_directory_uri()?>/images/brand-icons/delivery-icon-fill-pink.svg" alt="delivery icon"></span>
+                <span>Indica el código postal donde quieres recibir tu pedido</span>
+            </div>
+        <input placeholder="Código postal" id="calc_shipping_postcode" type="text">
         <button disabled id="check_shipping_postcode">Comprobar</button>
         <p id="mensaje_zona_envio"></p>
         <?php if(is_front_page() || is_shop()) { ?>
@@ -268,16 +274,17 @@ function soivigol_insert_popup() {
                 if ( validCodesList.includes(Number(cpInput.value))) {
                     console.log("Válido")
                     document.getElementById("mensaje_zona_envio").innerHTML = "Envío a domicilio disponible para esta zona.";
+                    document.getElementById("mensaje_zona_envio").style.background = "#25CE71";
                 } 
                 else 
                 {
                     console.log("NO Válido");
-                    document.getElementById("mensaje_zona_envio").innerHTML = "Envío a domicilio no disponible para esta zona.";
+                    document.getElementById("mensaje_zona_envio").innerHTML = "Lo sentimos. El envío a domicilio no está disponible para esta zona.";
+                    document.getElementById("mensaje_zona_envio").style.background = "#FF502D";
                 }
             });
         </script>
         <?php } ?>
-       <span id="cerrar-pop-up" class="soivigol-close">&times;</span>
        </div>
     </div>
     <?php

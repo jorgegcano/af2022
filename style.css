@@ -4,7 +4,7 @@
  Author:       XTemos
  Author URI:   http://xtemos.com
  Template:     woodmart
- Version:      1.0.1
+ Version:      1.0.0
  Text Domain:  woodmart
 */
 
@@ -151,7 +151,7 @@ ul.wd-nav-mobile li:last-child {
 
 .whb-header-bottom {
   background-color: var(--afPurpleOriginal)!important;
-  padding: 2px 0;
+  padding: 5px 0;
 }
 
 .whb-header-bottom .container > div {
@@ -618,6 +618,14 @@ footer .widget_nav_menu ul li a {
   background-color: var(--afPurpleOriginalHover);
 } 
 
+#mensaje_zona_envio {
+  margin: 0;
+  font-weight: bold;
+  padding: 10px;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
 .soivigol-popup {
   position: fixed;
   top: 0;
@@ -632,32 +640,68 @@ footer .widget_nav_menu ul li a {
 }
 
 .soivigol-popup-inner {
-  background-color: white;
-  width: 40%;
-  min-height: 280px;
+  background-color: var(--white);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  padding: 30px;
+  padding: 15px;
   border-radius:10px;
+  width: 80%;
 }
 
-@media (max-width: 768px) { 
-  .soivigol-popup-inner {
-    width: 80%;
-  }
+.soivigol-popup-inner-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-gray-400);
+}
+
+.soivigol-popup-inner-title span:first-of-type{
+  font-weight: 600;
+  color: var(--wd-title-color);
 }
 
 .soivigol-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   cursor: pointer;
-  width: 20px;
-  text-align: center;
-  font-size: 22px;
-  line-height: 1;
+  font-size: 20px;
+}
+
+.soivigol-popup-inner-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.soivigol-popup-inner-subtitle .delivery-icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.soivigol-popup-inner-subtitle .delivery-icon img{
+  width: 90px;
+}
+
+@media (min-width: 375px) { 
+  .soivigol-popup-inner-subtitle .delivery-icon img{
+    width: 50px;
+  }
+}
+
+@media (min-width: 488px) { 
+  .soivigol-popup-inner-subtitle .delivery-icon img{
+    width: 40px;
+  }
+}
+
+@media (min-width: 506px) { 
+  .soivigol-popup-inner {
+    max-width: 405px;
+  }
 }
 
 .soivigol-popup.open {
