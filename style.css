@@ -665,7 +665,13 @@ footer .widget_nav_menu ul li a {
 
 .soivigol-close {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
+  transition: .2s;
+}
+
+.soivigol-close:hover {
+  color: #000000;
+  transform: scale(1.1);
 }
 
 .soivigol-popup-inner-subtitle {
