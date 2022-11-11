@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( '0.0.10' ) );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( '0.0.11' ) );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -16,6 +16,8 @@ add_action( 'woocommerce_before_add_to_cart_form', 'woocommerce_template_single_
 
 function add_nutritional_info()
 {
+
+    if (get_field('informacion_nutricional')['ocultar_tabla']) { return; }
     $formato = get_field('informacion_nutricional')['formato'];
     $concat = get_field('informacion_nutricional')['formato'] === 'porciones' ? 'Porción' : 'Unidad';
      ?>
@@ -25,7 +27,7 @@ function add_nutritional_info()
                 <th colspan="2"><strong>Información Nutricional</strong></th>
             </tr>
             <tr>
-                <td colspan="2"><strong><?php echo get_field('informacion_nutricional')['packaging']; ?></strong></td>
+                <td colspan="2"><?php echo get_field('informacion_nutricional')['packaging']; ?></td>
             </tr>
             <tr>
                 <td><?php echo $formato; ?></td>
@@ -67,8 +69,8 @@ function add_nutritional_info()
             </tr>
             <?php if (!empty(get_field('informacion_nutricional')['observaciones'])) { ?>
                 <tr>
-                <td colspan="2" style="color:black;font-size:12px;padding:0 15px;font-style:italic;">
-                    *<?php echo get_field('informacion_nutricional')['observaciones']; ?>
+                <td colspan="2" style="font-size:12px;padding:5px 15px;font-style:italic;">
+                    <span style="color:red;">*</span><?php echo get_field('informacion_nutricional')['observaciones']; ?>
                 </td>
             </tr> <?php 
             } ?>
@@ -90,6 +92,7 @@ function get_alergenos() {
 
 }
 add_action( 'woocommerce_before_add_to_cart_form', 'add_nutritional_info', 10 );
+
 
 function wc_varb_price_range( $wcv_price, $product ) {
 

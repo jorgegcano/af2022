@@ -56,12 +56,56 @@ p,
   font-family: var(--fuenteSecundaria) !important;
 }
 
-p {
+.product_title.wd-entities-title,
+.product-image-summary-inner .price,
+.summary-add-to-cart-form-mnm .price {
+  font-size: 20px!important;
+}
+
+.mnm_item .product_title.entry-title {
+  font-size: 18px!important;
+}
+
+.home p,
+.soivigol-popup-inner-title span:first-child,
+.soivigol-popup-inner-subtitle span:last-child,
+.woocommerce-product-details__short-description p,
+.woocommerce-Tabs-panel--description p,
+.shipping-info-header-banner,
+.wd-entities-title,
+.hero-background p {
   font-size: 15px!important;
 }
 
-.wd-entities-title {
-  font-size: 15px!important;
+@media (min-width: 768px) { 
+  .home p,
+  .soivigol-popup-inner-title span:first-child,
+  .soivigol-popup-inner-subtitle span:last-child,
+  .woocommerce-product-details__short-description p,
+  .woocommerce-Tabs-panel--description p,
+  .shipping-info-header-banner,
+  .wd-entities-title,
+  .hero-background p {
+    font-size: 16px!important;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .home p,
+  .woocommerce-product-details__short-description p,
+  .woocommerce-Tabs-panel--description p,
+  .wd-entities-title,
+  .hero-background p {
+    font-size: 18px!important;
+  }
+  .cart-info .wd-entities-title {
+    font-size: 16px!important;
+  }
+  .product_title.wd-entities-title,
+  .product-image-summary-inner .price,
+  .summary-add-to-cart-form-mnm .price {
+    font-size: 24px!important;
+  }
 }
 
 h1,
@@ -171,7 +215,7 @@ font-weight: bold!important;
   height: 80vh;
 } 
 
-.main-page-wrapper {
+.home .main-page-wrapper {
   padding-top: 0;
 }
 
@@ -248,10 +292,6 @@ margin-bottom: 40px!important;
 
 .widget_shopping_cart .button.checkout.wc-forward{
   display: none;
-}
-
-.cart-info .wd-entities-title {
-  font-size: 14px!important;
 }
 
 @media (max-width: 575px) { 
@@ -345,24 +385,34 @@ height: 40px!important;
 }
 
 .nutritional-info-table th{
-  background-color: #78d4ee;
-  color: black;
+  background-color: var(--afGrey);
+  color: var(--wd-title-color);
+  border-bottom: none;
 }
-
+/*
+--afPinkOriginal: #EF8BA9;
+--afBlueOriginal:#79D5EF;
+--afRedOriginal: #EE6F58;
+--afBrownOriginal: #9A645C;
+--afYellowOriginal: #FABD77;
+--afGreenOriginal: #989F75;
+--afPurpleOriginal: #9378A0;
+*/
 .nutritional-info-table td{
-  background-color: rgba(120, 212, 238, 0.16)
+  color: var(--wd-text-color);
+  border-bottom: 1px solid var(--afGrey);
 }
 
 .nutritional-info-table th,
 .nutritional-info-table td {
   padding: 5px 15px;
-  border: 3px solid #ffffff;
 }
 
 .listado-alergenos {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -370,6 +420,7 @@ height: 40px!important;
 
 .alergeno {
   margin: 2px;
+  width: 25px;
 }
 
 div.quantity input[type="button"]:first-of-type {
@@ -385,6 +436,10 @@ div.quantity input[type="button"]:last-of-type {
 div.quantity input[type="button"]:hover {
   background-color: #77CBDE!important;
   border-color: #77CBDE!important;
+}
+
+.summary-add-to-cart-form-mnm>p.price{
+ display: none;
 }
 
 .wd-icon {
@@ -433,8 +488,64 @@ div.quantity input[type="button"]:hover {
 
 .slider-title:before {
   left: unset!important;
-  background-color: var(--afPinkOriginal)!important;
 }
+/******************************/
+
+/*Single Product Mix and Match*/
+.mnm_form .mnm_child_products {
+  padding: 0;
+}
+
+.mnm_form .mnm_child_products li {
+  flex: 0 0 100%;
+  max-width: 100%;
+  flex-direction: row-reverse!important;
+  min-height: 170px;
+  border-bottom: 1px solid var(--color-gray-400);
+  margin-bottom: 30px!important;
+  padding: 0;
+  padding-bottom: 38px;
+}
+
+.mnm_form .mnm_child_products li .product-thumbnail {
+  flex: 0 0 50%;
+}
+
+li .product-thumbnail .mnm_child_product_images {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mnm_form .mnm_child_products li  .product-details {
+  flex: 0 0 50%;
+  padding-right: 5px;
+}
+
+.mnm_form .mnm_child_products li  .product-details .price {
+  font-size: 18px!important;
+}
+
+.mnm_form .mnm_child_products li .product-quantity {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 8px;
+}
+
+@media (min-width: 500px) { 
+  .mnm_form .mnm_child_products li {
+    max-width: 45%;
+    min-height: 239px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .mnm_form .mnm_child_products li {
+    max-width: 30%;
+  }
+}
+
 /******************************/
 
 /*Product Allergens Details*/
