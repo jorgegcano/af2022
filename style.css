@@ -498,10 +498,11 @@ div.quantity input[type="button"]:hover {
 
 .mnm_form .mnm_child_products li {
   flex: 0 0 100%;
-  max-width: 100%;
+  max-width: 95%;
   flex-direction: row-reverse!important;
   min-height: 170px;
   border-bottom: 1px solid var(--color-gray-400);
+  margin: 0 auto;
   margin-bottom: 30px!important;
   padding: 0;
   padding-bottom: 48px;
