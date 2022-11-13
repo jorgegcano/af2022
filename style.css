@@ -520,6 +520,7 @@ li .product-thumbnail .mnm_child_product_images {
 .mnm_form .mnm_child_products li  .product-details {
   flex: 0 0 50%;
   padding-right: 5px;
+  text-align: left;
 }
 
 .mnm_form .mnm_child_products li  .product-details .price {
