@@ -504,7 +504,7 @@ div.quantity input[type="button"]:hover {
   border-bottom: 1px solid var(--color-gray-400);
   margin-bottom: 30px!important;
   padding: 0;
-  padding-bottom: 38px;
+  padding-bottom: 48px;
 }
 
 .mnm_form .mnm_child_products li .product-thumbnail {
@@ -532,11 +532,18 @@ li .product-thumbnail .mnm_child_product_images {
   padding-bottom: 8px;
 }
 
+.mnm_item .quantity input[type="button"] {
+  min-width: 35px;
+}
+
 @media (min-width: 500px) { 
   .mnm_form .mnm_child_products li {
     max-width: 45%;
     min-height: 239px;
     margin: 0 auto;
+  }
+  .mnm_form .mnm_child_products li {
+    padding-bottom: 38px;
   }
 }
 
@@ -872,10 +879,6 @@ footer .widget_nav_menu ul li a {
 
 .wpcf7-form input {
   border: 2px solid var(--wd-form-brd-color)
-}
-
-.wpcf7-form input[name="your-subject"] {
-  opacity: 0.5;
 }
 
 .wpcf7-form .wpcf7-form-control.wpcf7-submit {
