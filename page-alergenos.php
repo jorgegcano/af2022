@@ -11,7 +11,12 @@
             $productos = new WP_Query($args);
 
             while($productos->have_posts()) : $productos->the_post();
-
+                //eliminamos los donuts individuales de la lista de alérgenos.
+                $categories = get_the_terms($productos->post->ID, 'product_cat');
+                if  (count($categories) == 1 && $categories[0]->slug == 'donuts') {
+                    continue;
+                }
+                //
                 ?>
 
                 <div class='product-allergens-details' product-id='<?php echo the_ID(); ?>'>
