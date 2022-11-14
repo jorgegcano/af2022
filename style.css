@@ -198,6 +198,11 @@ ul.wd-nav-mobile li:last-child {
   padding: 5px 0;
 }
 
+.woocommerce-cart .whb-header-bottom {
+  background-color: var(--info)!important;
+  padding: 5px 0;
+}
+
 .whb-header-bottom .container > div {
   height: auto!important;
   max-height: none!important;
