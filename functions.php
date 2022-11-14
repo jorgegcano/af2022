@@ -282,7 +282,7 @@ function soivigol_insert_popup() {
                 else 
                 {
                     console.log("NO Válido");
-                    document.getElementById("mensaje_zona_envio").innerHTML = "Lo sentimos. El envío a domicilio no está disponible para esta zona.";
+                    document.getElementById("mensaje_zona_envio").innerHTML = "El envío a domicilio no está disponible para esta zona.<br>Puedes optar por la 'Recogida en local' (cerca del metro de Legazpi). Te enviaremos un email con la dirección exacta al confirmar el pago.";
                     document.getElementById("mensaje_zona_envio").style.background = "#FF502D";
                 }
             });
