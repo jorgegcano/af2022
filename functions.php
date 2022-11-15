@@ -218,7 +218,7 @@ function bt_add_checkout_checkbox() {
         'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
         'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
         'required'      => true,
-        'label'         => 'Estoy de acuerdo con la <a href="https://www.antojosfit.es/politica-de-privacidad" target="_blank" rel="noopener">Política de privacidad</a>'
+        'label'         => 'Estoy de acuerdo con la <a style="color:blue;text-decoration: underline;" href="https://www.antojosfit.es/politica-de-privacidad" target="_blank" rel="noopener">Política de privacidad</a>'
      ));  
 }
 add_action( 'woocommerce_review_order_before_submit', 'bt_add_checkout_checkbox', 10 );
