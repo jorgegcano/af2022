@@ -207,6 +207,10 @@ function my_completed_order_email_instructions( $order, $sent_to_admin, $plain_t
         	}
     	}
 	}
+
+    if('customer_on_hold_order' == $email->id && 'cheque' == $order->get_payment_method()){
+         echo '<p><strong>Si no lo has hecho aún, te recordamos que debes enviar el importe TOTAL del pago por Bizum con el número de pedido #'.$order->get_id().' al +34 611 425 698. Comenzaremos a procesar tu pedido en cuanto confirmemos el pago.</strong></p>';
+	}
 }
 add_action( 'woocommerce_email_order_details', 'my_completed_order_email_instructions', 10, 4 );
 
