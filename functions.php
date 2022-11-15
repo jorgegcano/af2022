@@ -18,6 +18,7 @@ function add_nutritional_info()
 {
 
     if (get_field('informacion_nutricional')['ocultar_tabla']) { return; }
+    if (is_product()) {
     $formato = get_field('informacion_nutricional')['formato'];
     $concat = get_field('informacion_nutricional')['formato'] === 'porciones' ? 'Porción' : 'Unidad';
      ?>
@@ -78,6 +79,7 @@ function add_nutritional_info()
         </table>
        
      <?php
+     }
 }
 
 function get_alergenos() {
@@ -92,6 +94,7 @@ function get_alergenos() {
 
 }
 add_action( 'woocommerce_before_add_to_cart_form', 'add_nutritional_info', 10 );
+
 
 
 function wc_varb_price_range( $wcv_price, $product ) {
