@@ -160,7 +160,7 @@ ul.wd-nav-mobile li:nth-child(7) {
   left: 33.3%;
 }
 
-ul.wd-nav-mobile li:last-child {
+ul.wd-nav-mobile li.menu-item-object-custom:last-child {
   left: 66.6%;
 }
 
