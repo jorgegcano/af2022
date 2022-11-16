@@ -156,7 +156,7 @@ h6 {
   border-top: 1px solid var(--nav-mobile-link-brdcolor);
 }
 
-ul.wd-nav-mobile li:nth-child(7) {
+ul.wd-nav-mobile li.menu-item-object-custom:nth-child(6) {
   left: 33.3%;
 }
 
