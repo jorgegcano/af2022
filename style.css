@@ -440,6 +440,20 @@ height: 40px!important;
     color: var(--white);
 }
 
+.home .dedication {
+  display: none;
+}
+
+.single-product .dedication {
+  display: flex;
+  align-items: center;
+}
+
+.dedication-area-text-hide  {
+  visibility: hidden;
+  height: 0;
+}
+
 .rotated {
   transform: rotate(180deg);
   transition: 1s;
