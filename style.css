@@ -73,7 +73,8 @@ p,
 .woocommerce-Tabs-panel--description p,
 .shipping-info-header-banner,
 .wd-entities-title,
-.hero-background p {
+.hero-background p,
+.dedication-text-add-on-font-size {
   font-size: 15px!important;
 }
 
@@ -85,7 +86,8 @@ p,
   .woocommerce-Tabs-panel--description p,
   .shipping-info-header-banner,
   .wd-entities-title,
-  .hero-background p {
+  .hero-background p,
+  .dedication-text-add-on-font-size {
     font-size: 16px!important;
   }
 }
@@ -95,7 +97,8 @@ p,
   .woocommerce-product-details__short-description p,
   .woocommerce-Tabs-panel--description p,
   .wd-entities-title,
-  .hero-background p {
+  .hero-background p,
+  .dedication-text-add-on-font-size {
     font-size: 18px!important;
   }
   .cart-info .wd-entities-title {
@@ -399,15 +402,7 @@ height: 40px!important;
   color: var(--wd-title-color);
   border-bottom: none;
 }
-/*
---afPinkOriginal: #EF8BA9;
---afBlueOriginal:#79D5EF;
---afRedOriginal: #EE6F58;
---afBrownOriginal: #9A645C;
---afYellowOriginal: #FABD77;
---afGreenOriginal: #989F75;
---afPurpleOriginal: #9378A0;
-*/
+
 .nutritional-info-table td{
   color: var(--wd-text-color);
   border-bottom: 1px solid var(--afGrey);
@@ -431,6 +426,33 @@ height: 40px!important;
 .alergeno {
   margin: 2px;
   width: 25px;
+}
+
+#show-dedication-field {
+  background: var(--afPurpleOriginal);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.dedication-area-text-hide  {
+  visibility: hidden;
+  height: 0;
+}
+
+.dedication-area-text-visible {
+  visibility: visible;
+  height: auto;
 }
 
 div.quantity input[type="button"]:first-of-type {

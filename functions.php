@@ -319,3 +319,71 @@ add_action( 'get_header', function( $name ) {
         return (string) $name;
     });
 });
+
+// -----------------------------------------
+// 1. Show custom input field above Add to Cart
+add_action( 'woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9 );
+ 
+function bbloomer_product_add_on() {
+    $value = isset( $_POST['dedication_text_add_on'] ) ? sanitize_text_field( $_POST['dedication_text_add_on'] ) : '';
+    echo '<p class="dedication-text-add-on-font-size" style="display:flex;align-items:center">Añade una dedicatoria si lo deseas: <span id="show-dedication-field"><i class="fas fa-chevron-down"></i></span></p>';
+    echo '<div class="dedication-area-text-hide" style="margin-bottom:20px;"><textarea maxlength="200" class="dedication-text-add-on-font-size" name="dedication_text_add_on" value="' . $value . '"></textarea></div>';
+}
+
+// -----------------------------------------
+// 3. Save custom input field value into cart item data
+add_filter( 'woocommerce_add_cart_item_data', 'bbloomer_product_add_on_cart_item_data', 10, 2 );
+ 
+function bbloomer_product_add_on_cart_item_data( $cart_item, $product_id ){
+    if( isset( $_POST['dedication_text_add_on'] ) ) {
+        $cart_item['dedication_text_add_on'] = sanitize_text_field( $_POST['dedication_text_add_on'] );
+    }
+    return $cart_item;
+}
+
+// -----------------------------------------
+// 4. Display custom input field value @ Cart
+add_filter( 'woocommerce_get_item_data', 'bbloomer_product_add_on_display_cart', 10, 2 );
+ 
+function bbloomer_product_add_on_display_cart( $data, $cart_item ) {
+    if ( isset( $cart_item['dedication_text_add_on'] ) ){
+        $data[] = array(
+            'name' => 'Dedicatoria',
+            'value' => sanitize_text_field( $cart_item['dedication_text_add_on'] )
+        );
+    }
+    return $data;
+}
+ 
+// -----------------------------------------
+// 5. Save custom input field value into order item meta
+ 
+add_action( 'woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_item_meta', 10, 2 );
+ 
+function bbloomer_product_add_on_order_item_meta( $item_id, $values ) {
+    if ( ! empty( $values['dedication_text_add_on'] ) ) {
+        wc_add_order_item_meta( $item_id, 'Custom Text Add-On', $values['dedication_text_add_on'], true );
+    }
+}
+ 
+// -----------------------------------------
+// 6. Display custom input field value into order table
+ 
+add_filter( 'woocommerce_order_item_product', 'bbloomer_product_add_on_display_order', 10, 2 );
+ 
+function bbloomer_product_add_on_display_order( $cart_item, $order_item ){
+    if( isset( $order_item['dedication_text_add_on'] ) ){
+        $cart_item['dedication_text_add_on'] = $order_item['dedication_text_add_on'];
+    }
+    return $cart_item;
+}
+ 
+// -----------------------------------------
+// 7. Display custom input field value into order emails
+ 
+add_filter( 'woocommerce_email_order_meta_fields', 'bbloomer_product_add_on_display_emails' );
+ 
+function bbloomer_product_add_on_display_emails( $fields ) { 
+    $fields['dedication_text_add_on'] = 'Custom Text Add-On';
+    return $fields; 
+}
