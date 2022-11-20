@@ -327,7 +327,7 @@ add_action( 'woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 
 function bbloomer_product_add_on() {
     $valueDedication = isset( $_POST['dedication_text_add_on'] ) ? sanitize_text_field( $_POST['dedication_text_add_on'] ) : '';
     echo '<p class="dedication dedication-text-add-on-font-size">Añade una dedicatoria si lo deseas: <span id="show-dedication-field"><i class="fas fa-chevron-down"></i></span></p>';
-    echo '<div class="dedication dedication-area-text-hide" style="margin-bottom:20px;"><textarea maxlength="200" class="dedication-text-add-on-font-size" name="dedication_text_add_on" value="' . $valueDedication . '"></textarea></div>';
+    echo '<div class="dedication dedication-area-text-hide" style="margin-bottom:20px;"><textarea maxlength="200"  placeholder="Escribe una felicitación por cumpleaños, agradecimientos, celebraciones... " class="dedication-text-add-on-font-size" name="dedication_text_add_on" value="' . $valueDedication . '"></textarea></div>';
 }
 
 // -----------------------------------------
