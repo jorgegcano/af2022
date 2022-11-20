@@ -313,6 +313,16 @@ margin-bottom: 40px!important;
   }
 }
 
+.woocommerce-cart .cart-actions button[name="update_cart"][aria-disabled="false"] {
+  color: var(--white);
+  background-color: var(--afPurpleOriginal);
+}
+
+.woocommerce-cart .cart-actions button[name="update_cart"][aria-disabled="false"]:hover {
+  color: var(--white);
+  background-color: var(--afPurpleOriginalHover);
+}
+
 .cart-totals-section {
   margin-bottom: 40px;
 }
