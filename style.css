@@ -450,7 +450,8 @@ height: 40px!important;
     color: var(--white);
 }
 
-.home .dedication {
+.home .dedication,
+.woocommerce-shop .dedication {
   display: none;
 }
 
