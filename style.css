@@ -336,8 +336,18 @@ margin-bottom: 40px!important;
 /*Checkout*/
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
-.woocommerce-shipping-methods li input{
- 
+ul.woocommerce-shipping-methods {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.woocommerce-checkout-review-order-table 
+.woocommerce-shipping-totals.shipping 
+.woocommerce-shipping-methods li input:not(:checked)+label,
+.woocommerce-checkout-review-order-table 
+.woocommerce-shipping-totals.shipping 
+.woocommerce-shipping-methods li input:not(:checked) {
+ display: none;
 }
 
 .woocommerce-checkout .site-content {
