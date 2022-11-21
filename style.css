@@ -338,12 +338,14 @@ margin-bottom: 40px!important;
 .woocommerce-shipping-totals.shipping 
 ul.woocommerce-shipping-methods {
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.3;
 }
 
+/*
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
 .woocommerce-shipping-methods li input:not(:checked)+label,
+*/
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
 .woocommerce-shipping-methods li input:not(:checked) {
@@ -354,6 +356,13 @@ ul.woocommerce-shipping-methods {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+@media (min-width: 768px) { 
+  .cart-table-section {
+    padding-bottom: 40px;
+  }
+}
+
 
 /*Botones*/
 
