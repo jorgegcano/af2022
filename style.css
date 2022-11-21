@@ -341,11 +341,9 @@ ul.woocommerce-shipping-methods {
   opacity: 0.3;
 }
 
-/*
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
 .woocommerce-shipping-methods li input:not(:checked)+label,
-*/
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
 .woocommerce-shipping-methods li input:not(:checked) {
