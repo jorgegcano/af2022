@@ -165,7 +165,9 @@ function custom_override_default_address_fields( $address_fields ) {
         $address_fields['state']['required'] = false;
         $address_fields['state']['class'] = array( 'd-none');
         $address_fields['postcode']['required'] = false;
-        $address_fields['postcode']['class'] = array( 'd-none');
+        if(!is_cart()) {
+            $address_fields['postcode']['class'] = array( 'd-none');
+        }
         $address_fields['country']['required'] = false;
         $address_fields['country']['class'] = array( 'd-none');
         return $address_fields;
