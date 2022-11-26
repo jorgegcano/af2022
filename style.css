@@ -74,8 +74,7 @@ p,
 .shipping-info-header-banner,
 .wd-entities-title,
 .hero-background p,
-.dedication-text-add-on-font-size,
-.error-404-page p {
+.dedication-text-add-on-font-size {
   font-size: 15px!important;
 }
 
@@ -88,8 +87,7 @@ p,
   .shipping-info-header-banner,
   .wd-entities-title,
   .hero-background p,
-  .dedication-text-add-on-font-size,
-  .error-404-page p {
+  .dedication-text-add-on-font-size {
     font-size: 16px!important;
   }
 }
@@ -100,8 +98,7 @@ p,
   .woocommerce-Tabs-panel--description p,
   .wd-entities-title,
   .hero-background p,
-  .dedication-text-add-on-font-size,
-  .error-404-page p {
+  .dedication-text-add-on-font-size {
     font-size: 18px!important;
   }
   .cart-info .wd-entities-title {
