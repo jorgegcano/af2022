@@ -452,6 +452,11 @@ height: 40px!important;
   margin-right: 10px;
 }
 
+.alergeno:before {
+  content: "";
+  margin-left: -4px;
+}
+
 @media (min-width: 768px) { 
   .alergeno:before {
     content: "";
