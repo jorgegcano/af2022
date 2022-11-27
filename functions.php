@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.4' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.51' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -88,7 +88,8 @@ function get_alergenos() {
     $path = get_stylesheet_directory_uri()."/images/alergenos-template-producto/";
     
     foreach ($alergenos as $alergeno => $value) { ?>
-        <li class='alergeno <?php echo $value?>'><img src='<?php echo $path.$value.".svg"; ?>' alt='alergeno-<?php echo $value?>'/></li> <?php
+        <li class='alergeno <?php echo $value?>'><?php echo $value?></li> <?php
+        //<img src='aquí-abres-php echo $path.$value.".svg"; aquí-cierras-php<!-- ' alt='alergeno- aquí-abres-php //echo $value aquí-cierras-php'/>
     } ?>
     </ul> <?php
 

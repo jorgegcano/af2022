@@ -441,17 +441,20 @@ height: 40px!important;
 }
 
 .listado-alergenos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  list-style: none;
+  list-style: inside;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .alergeno {
-  margin: 2px;
+  margin-right: 10px;
+}
+
+.alergeno:before {
+  content: "";
+  margin-left: -8px;
 }
 
 #show-dedication-field {
