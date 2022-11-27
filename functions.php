@@ -88,7 +88,7 @@ function get_alergenos() {
     $path = get_stylesheet_directory_uri()."/images/alergenos-template-producto/";
     
     foreach ($alergenos as $alergeno => $value) { ?>
-        <li class='alergeno <?php echo $value?>'><img src='<?php echo $path.$value.".png"; ?>' alt='alergeno-<?php echo $value?>'/></li> <?php
+        <li class='alergeno <?php echo $value?>'><img src='<?php echo $path.$value.".svg"; ?>' alt='alergeno-<?php echo $value?>'/></li> <?php
     } ?>
     </ul> <?php
 
