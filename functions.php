@@ -397,3 +397,25 @@ function bbloomer_product_add_on_display_emails( $fields ) {
     return $fields; 
 }
 
+add_filter( 'woocommerce_cart_crosssell_ids', 'filter_woocommerce_cart_crosssell_ids', 10, 2 );
+function filter_woocommerce_cart_crosssell_ids( $cross_sells, $cart ) {
+
+    $product_ids_from_cats_ids = get_posts( array(
+        'post_type'   => 'product',
+        'numberposts' => -1,
+        'post_status' => 'publish',
+        'fields'      => 'ids',
+        'tax_query'   => array(
+            array(
+                'taxonomy' => 'product_cat',
+                'field'    => 'slug',
+                'terms'    => 'merchandising',
+                'operator' => 'IN',
+            )
+        ),
+    ) );
+
+    $cross_sells = array_unique( $product_ids_from_cats_ids, SORT_REGULAR );
+
+    return $cross_sells;
+}
