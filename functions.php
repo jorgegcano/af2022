@@ -423,3 +423,4 @@ function filter_woocommerce_cart_crosssell_ids( $cross_sells, $cart ) {
 
     return $cross_sells;
 }
+//Comentario de prueba
