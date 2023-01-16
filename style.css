@@ -289,14 +289,13 @@ flex-direction: row;
 @media (min-width: 768px) {   
   .woocommerce-shop 
   .wrapp-category 
-  .wd-entities-title.category-title {
-    color: var(--afWhite);
-  }
-
+  .wd-entities-title.category-title,
   .woocommerce-shop 
   .wrapp-category 
-  .more-products {
-    color: var(--afPurpleOriginal);
+  .more-products
+   {
+    color: var(--afWhite);
+    text-shadow: 3px 2px 3px #000000;
   }
 }
 
