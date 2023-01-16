@@ -286,6 +286,20 @@ flex-direction: row;
   }
 }
 
+@media (min-width: 768px) {   
+  .woocommerce-shop 
+  .wrapp-category 
+  .wd-entities-title.category-title {
+    color: var(--afWhite);
+  }
+
+  .woocommerce-shop 
+  .wrapp-category 
+  .more-products {
+    color: var(--afPurpleOriginal);
+  }
+}
+
 .products.elements-grid {
 margin-bottom: 40px!important;
 }
