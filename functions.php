@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.55' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.56' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -250,7 +250,7 @@ add_action( 'woocommerce_checkout_process', 'bt_add_checkout_checkbox_warning' )
 
 function oaf_woocommerce_boton_seguir_comprando_carrito(  ) {
 
-	$tienda_url = get_permalink( woocommerce_get_page_id( 'shop' ) );  // obtener la url de la página de tienda
+	$tienda_url = get_permalink( wc_get_page_id( 'shop' ) );  // obtener la url de la página de tienda
 	?>
 	<a class="button wc-backward" href="<?php echo $tienda_url ?>">
 		Seguir comprando
@@ -258,7 +258,7 @@ function oaf_woocommerce_boton_seguir_comprando_carrito(  ) {
 	<?php
 }
 add_action( 'woocommerce_cart_actions', 'oaf_woocommerce_boton_seguir_comprando_carrito', 10, 0 );
-add_action( 'woocommerce_order_details_after_customer_details', 'oaf_woocommerce_boton_seguir_comprando_carrito', 10, 0 );
+add_action( 'woocommerce_thankyou', 'oaf_woocommerce_boton_seguir_comprando_carrito', 10, 0 );
 
 function woo_change_order_received_text( $str, $order ) {
     $order = new WC_Order( $order->data["id"] );
