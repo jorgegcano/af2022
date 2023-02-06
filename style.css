@@ -146,32 +146,6 @@ h6 {
 /*****************************/
 
 /*Menú*/
-.menu-item-type-custom.menu-item-object-custom {
-  position: absolute;
-  bottom: 0;
-  width: 33.3%;
-  display: flex;
-  justify-content: center;
-}
-
-.menu-item-type-custom.menu-item-object-custom  .woodmart-nav-link {
-  border-bottom: none;
-  border-top: 1px solid var(--nav-mobile-link-brdcolor);
-}
-
-ul.wd-nav-mobile li.menu-item-object-custom:nth-child(6) {
-  left: 33.3%;
-}
-
-ul.wd-nav-mobile li.menu-item-object-custom:last-child {
-  left: 66.6%;
-}
-
-.menu-item-type-custom.menu-item-object-custom .nav-link-text{
-  margin: 0 auto;
-  width: 30px;
-}
-
 @media (min-width: 768px) { 
   .menu.wd-nav>li.current-menu-item::before {
     font-family: "Font Awesome 5 Free"; 
