@@ -335,6 +335,13 @@ margin-bottom: 40px!important;
   }
 }
 
+.woocommerce-shipping-calculator .shipping-calculator-button {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  background-color: var(--warning);
+  color: var(--afBlackTitle);
+}
+
 .shipping-calculator-form 
 .form-row.validate-required.address-field.form-row-wide {
   margin-bottom: 0;
