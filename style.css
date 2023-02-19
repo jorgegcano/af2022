@@ -509,10 +509,6 @@ height: 40px!important;
     color: var(--white);
 }
 
-.woocommerce-variation-add-to-cart .dedication {
-  display: none;
-}
-
 .single-product .dedication {
   display: flex;
   align-items: center;

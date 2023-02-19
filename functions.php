@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.59' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.60' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -331,15 +331,19 @@ add_action( 'get_header', function( $name ) {
 
 // -----------------------------------------
 // 1. Show custom input field above Add to Cart
+
 add_action( 'woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9 );
- 
+
+
 function bbloomer_product_add_on() {
-    global $product;
-    $categories = get_the_terms($product->get_id(), 'product_cat');
-    if  (count($categories) == 1 && $categories[0]->slug != 'merchandising') {
-        $valueDedication = isset( $_POST['dedication_text_add_on'] ) ? sanitize_text_field( $_POST['dedication_text_add_on'] ) : '';
-        echo '<p class="dedication dedication-text-add-on-font-size">Añade una dedicatoria si lo deseas: <span id="show-dedication-field"><i class="fas fa-chevron-down"></i></span></p>';
-        echo '<div class="dedication dedication-area-text-hide" style="margin-bottom:20px;"><textarea maxlength="200"  placeholder="Escribe una felicitación por cumpleaños, agradecimientos, celebraciones... " class="dedication-text-add-on-font-size" name="dedication_text_add_on" value="' . $valueDedication . '"></textarea></div>';
+    if (is_product()) {
+        global $product;
+        $categories = get_the_terms($product->get_id(), 'product_cat');
+        if  (count($categories) == 1 && $categories[0]->slug != 'merchandising') {
+            $valueDedication = isset( $_POST['dedication_text_add_on'] ) ? sanitize_text_field( $_POST['dedication_text_add_on'] ) : '';
+            echo '<p class="dedication dedication-text-add-on-font-size">Añade una dedicatoria si lo deseas: <span id="show-dedication-field"><i class="fas fa-chevron-down"></i></span></p>';
+            echo '<div class="dedication dedication-area-text-hide" style="margin-bottom:20px;"><textarea maxlength="200"  placeholder="Escribe una felicitación por cumpleaños, agradecimientos, celebraciones... " class="dedication-text-add-on-font-size" name="dedication_text_add_on" value="' . $valueDedication . '"></textarea></div>';
+        }
     }
 }
 
