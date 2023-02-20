@@ -260,9 +260,8 @@ add_action( 'woocommerce_cart_actions', 'oaf_woocommerce_boton_seguir_comprando_
 add_action( 'woocommerce_thankyou', 'oaf_woocommerce_boton_seguir_comprando_carrito', 10, 0 );
 
 function woo_change_order_received_text( $str, $order ) {
-    $order = new WC_Order( $order->data["id"] );
     $payment_method = $order->get_payment_method();
-    $bizum_text = '<br>Envía Bizum de <strong style="color:#777">'.$order->data["total"].'€</strong> al número <strong style="color:#777">+34 611 425 698</strong> añadiendo como concepto el número: <strong style="color:#777">'.$order->data["id"].'</strong>.<br>Recibirás un email cuando confirmemos el pago.';
+    $bizum_text = '<br>Envía Bizum de <strong style="color:#777">'.$order->get_total().'€</strong> al número <strong style="color:#777">+34 611 425 698</strong> añadiendo como concepto el número: <strong style="color:#777">'.$order->get_id().'</strong>.<br>Recibirás un email cuando confirmemos el pago.';
     return $payment_method == 'cheque' ? $str.$bizum_text : $str;
 }
 add_filter('woocommerce_thankyou_order_received_text', 'woo_change_order_received_text', 10, 2 );
