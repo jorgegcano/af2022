@@ -231,7 +231,7 @@ function add_notice_about_shipping($order) {
         $chosen_method = explode(':', reset($chosen_methods) );
     }
     if ($chosen_method[0] == "local_pickup") {
-        echo '<p style="font-style:italic;color:#242424;background-color:#F9E52C"><span style="color:red;">*</span>Solo queremos recordarte que has seleccionado <span style="text-decoration:underline;">recoger tu pedido en local (metro Legazpi)</span>. Si deseas seleccionar el envío a domicilio, vuelve atrás y valida tu código postal para comprobar si está dentro del área de envío.</p>';
+        echo '<p style="padding:10px;border-radius:5px;font-style:italic;color:#242424;background-color:#F9E52C"><span style="color:red;">*</span>Solo queremos recordarte que has seleccionado <span style="text-decoration:underline;">recoger tu pedido en local (metro Legazpi)</span>. Si deseas seleccionar el envío a domicilio, vuelve atrás y valida tu código postal para comprobar si está dentro del área de envío.</p>';
     } 
     
 }
