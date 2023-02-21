@@ -149,7 +149,6 @@ add_filter ('woocommerce_states', 'ejr_definir_provincias');
 // Our hooked in function - $address_fields is passed via the filter!
 function custom_override_default_address_fields( $address_fields ) {
 
-
     $chosen_methods = WC()->session->get( 'chosen_shipping_methods' ); // Método de envío seleccionado
     if(isset($chosen_methods)) {
         $chosen_method = explode(':', reset($chosen_methods) );
@@ -225,6 +224,18 @@ function my_completed_order_email_instructions( $order, $sent_to_admin, $plain_t
 	}
 }
 add_action( 'woocommerce_email_order_details', 'my_completed_order_email_instructions', 10, 4 );
+
+function add_notice_about_shipping($order) {   
+    $chosen_methods = WC()->session->get( 'chosen_shipping_methods' ); 
+    if(isset($chosen_methods)) {
+        $chosen_method = explode(':', reset($chosen_methods) );
+    }
+    if ($chosen_method[0] == "local_pickup") {
+        echo '<p style="font-style:italic;color:#242424;background-color:#F9E52C"><span style="color:red;">*</span>Has seleccionado <span style="text-decoration:underline;">recoger tu pedido en local (metro Legazpi)</span>. Si deseas seleccionar el envío a domicilio, vuelve atrás y valida tu código postal para comprobar si está dentro del área de envío.</p>';
+    } 
+    
+}
+add_filter('woocommerce_before_checkout_billing_form', 'add_notice_about_shipping', 10, 4 );
 
 function bt_add_checkout_checkbox() {  
 
