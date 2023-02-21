@@ -354,17 +354,24 @@ margin-bottom: 40px!important;
 /*Checkout*/
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
-ul.woocommerce-shipping-methods {
+ul.woocommerce-shipping-methods li input {
   pointer-events: none;
-  opacity: 0.3;
+  display: none;
 }
 
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
-.woocommerce-shipping-methods li input:not(:checked)+label,
+ul.woocommerce-shipping-methods li label {
+  color: var(--afPurpleOriginal);
+  font-weight: 600;
+}
+
 .woocommerce-checkout-review-order-table 
 .woocommerce-shipping-totals.shipping 
-.woocommerce-shipping-methods li input:not(:checked) {
+.woocommerce-shipping-methods li:nth-child(2) input:not(:checked)+label,
+.woocommerce-checkout-review-order-table 
+.woocommerce-shipping-totals.shipping 
+.woocommerce-shipping-methods li:nth-child(2) input:not(:checked) {
  display: none;
 }
 

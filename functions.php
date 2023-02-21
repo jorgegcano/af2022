@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.60' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.61' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -231,7 +231,7 @@ function add_notice_about_shipping($order) {
         $chosen_method = explode(':', reset($chosen_methods) );
     }
     if ($chosen_method[0] == "local_pickup") {
-        echo '<p style="padding:10px;border-radius:5px;font-style:italic;color:#242424;background-color:#F9E52C"><span style="color:red;">*</span>Solo queremos recordarte que has seleccionado <span style="text-decoration:underline;">recoger tu pedido en local (metro Legazpi)</span>. Si deseas seleccionar el envío a domicilio, vuelve atrás y valida tu código postal para comprobar si está dentro del área de envío.</p>';
+        echo '<p style="padding:10px;border-radius:5px;font-style:italic;color:#242424;background-color:#F9E52C"><span style="color:red;">* </span>Solo queremos recordarte que <span style="text-decoration:underline;">has seleccionado recoger tu pedido en local (metro Legazpi)</span>. Si deseas seleccionar el envío a domicilio, vuelve atrás y valida tu código postal para comprobar si está dentro del área de envío.</p>';
     } 
     
 }
