@@ -992,6 +992,39 @@ footer .widget_nav_menu ul li a {
 }
 /*********/
 
+/*Snipets*/
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-name{
+  color: #333;
+  font-family: var(--fuentePrincipal);
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-quantity input{
+  pointer-events: none;
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-quantity {
+  opacity: 0.5
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-remove::after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f06b";
+  font-size: 20px;
+  color: var(--afPurpleOriginal);
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-name::after { 
+  font-weight: 900; 
+  content: "¡Gratis!";
+  color: var(--afPurpleOriginal);
+}
+
+[data-product_id|="877"].remove {
+  display: none;
+}
+/*********/
+
 /*Galería
 .galeria-imagenes {
   display: grid;

@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.61' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.62' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -435,4 +435,30 @@ function filter_woocommerce_cart_crosssell_ids( $cross_sells, $cart ) {
     $cross_sells = array_unique( $product_ids_from_cats_ids, SORT_REGULAR );
 
     return $cross_sells;
+}
+
+add_action( 'template_redirect', 'bbloomer_add_gift_if_id_in_cart' );
+function bbloomer_add_gift_if_id_in_cart() {
+
+   if ( is_admin() ) return;
+   if ( WC()->cart->is_empty() ) return;
+
+   $product_gifted_id = 877;
+  
+   // see if gift id in cart
+   $product_gifted_cart_id = WC()->cart->generate_cart_id( $product_gifted_id );
+   $product_gifted_in_cart = WC()->cart->find_product_in_cart( $product_gifted_cart_id );
+ 
+   // if not in cart remove gift, else add gift
+    if ( $product_gifted_in_cart && count(WC()->cart->cart_contents) == 1 ) {
+        WC()->cart->remove_cart_item( $product_gifted_in_cart );
+    } else {
+        if ( ! $product_gifted_in_cart ) {
+            WC()->cart->add_to_cart( $product_gifted_id ); 
+        } else {
+            WC()->cart->remove_cart_item( $product_gifted_in_cart );
+            WC()->cart->add_to_cart( $product_gifted_id );
+        }
+    }
+    
 }
