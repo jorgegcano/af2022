@@ -993,6 +993,7 @@ footer .widget_nav_menu ul li a {
 /*********/
 
 /*Snipets*/
+/* Snippet dos bocaditos de regalo
 .shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr:last-child .product-name{
   color: #333;
   font-family: var(--fuentePrincipal);
@@ -1023,6 +1024,7 @@ footer .widget_nav_menu ul li a {
 [data-product_id|="877"].remove {
   display: none;
 }
+*/
 /*********/
 
 /*Galería

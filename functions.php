@@ -437,6 +437,7 @@ function filter_woocommerce_cart_crosssell_ids( $cross_sells, $cart ) {
     return $cross_sells;
 }
 
+/*
 add_action( 'template_redirect', 'bbloomer_add_gift_if_id_in_cart' );
 function bbloomer_add_gift_if_id_in_cart() {
 
@@ -461,4 +462,4 @@ function bbloomer_add_gift_if_id_in_cart() {
         }
     }
     
-}
+}*/
