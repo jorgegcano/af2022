@@ -246,6 +246,12 @@ flex-direction: row;
 
 /*Tienda*/
 
+.labels-rounded .out-of-stock {
+  max-width: none;
+  background-color: var(--afRedOriginal);
+  color: var(--white);
+}
+
 .woocommerce-shop .main-page-wrapper {
   padding-top: 0;
 }

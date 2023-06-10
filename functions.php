@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.63' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.64' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -206,19 +206,6 @@ function my_hide_shipping_when_free_is_available( $rates ) {
 add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
 
 function my_completed_order_email_instructions( $order, $sent_to_admin, $plain_text, $email ) {
-    if('customer_processing_order' == $email->id){
-		foreach( $order->get_items('shipping') as $shipping_item ){
-        	$shipping_rate_id = $shipping_item->get_method_id();
-        	$method_array = explode(':', $shipping_rate_id );
-        	$shipping_method_id = reset($method_array);
-        	// Display a custom text for local pickup shipping method only
-        	if( 'local_pickup' == $shipping_method_id ){
-            	echo '<p><strong>¡IMPORTANTE!</strong></p><p><strong>En el transcurso del día nos pondremos en contacto contigo para coordinar la recogida de tus antojos FIT en 					Legazpi</strong></p>';
-            	break;
-        	}
-    	}
-	}
-
     if('customer_on_hold_order' == $email->id && 'cheque' == $order->get_payment_method()){
          echo '<p><strong>Si no lo has hecho aún, te recordamos que debes enviar el importe TOTAL del pago por Bizum con el número de pedido #'.$order->get_id().' al +34 611 425 698. Comenzaremos a procesar tu pedido en cuanto confirmemos el pago.</strong></p>';
 	}
@@ -308,7 +295,7 @@ function soivigol_insert_popup() {
                 else 
                 {
                     console.log("NO Válido");
-                    document.getElementById("mensaje_zona_envio").innerHTML = "El envío a domicilio no está disponible para esta zona.<br>Puedes optar por la 'Recogida en local' (cerca del metro de Legazpi). Te enviaremos un email con la dirección exacta al confirmar el pago.";
+                    document.getElementById("mensaje_zona_envio").innerHTML = "El envío a domicilio no está disponible para esta zona.<br>Puedes optar por la 'Recogida en local' (C/ Jaime el Conquistador 27).";
                     document.getElementById("mensaje_zona_envio").style.background = "#FF502D";
                 }
             });
