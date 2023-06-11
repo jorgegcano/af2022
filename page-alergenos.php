@@ -13,7 +13,9 @@
             while($productos->have_posts()) : $productos->the_post();
                 //eliminamos los donuts individuales de la lista de alérgenos.
                 $categories = get_the_terms($productos->post->ID, 'product_cat');
-                if  (count($categories) == 1 && $categories[0]->slug == 'donuts') {
+                $not_suitable_categories = count($categories) == 1 && ($categories[0]->slug == 'donuts' || $categories[0]->slug == 'merchandising');
+                $not_in_stock_products = $productos->post->post_status == 'private';
+                if  ($not_suitable_categories || $not_in_stock_products) {
                     continue;
                 }
                 //
