@@ -171,7 +171,7 @@ h6 {
 }
 
 .whb-header-bottom {
-  background-color: var(--afRedOriginal)!important;
+  background-color: var(--afPurpleOriginal)!important;
   padding: 5px 0;
 }
 
@@ -241,6 +241,10 @@ flex-direction: row;
   .home .info-box-wrapper:not(:first-of-type){
     border-left: 3px solid #EFEFEF;
   }
+}
+
+.google-map-container {
+position: inherit;
 }
 /***********************/
 
