@@ -75,7 +75,7 @@ p,
 .wd-entities-title,
 .hero-background p,
 .dedication-text-add-on-font-size {
-  font-size: 15px!important;
+  font-size: 16px!important;
 }
 
 @media (min-width: 768px) { 
@@ -88,7 +88,7 @@ p,
   .wd-entities-title,
   .hero-background p,
   .dedication-text-add-on-font-size {
-    font-size: 16px!important;
+    font-size: 17px!important;
   }
 }
 
@@ -99,15 +99,15 @@ p,
   .wd-entities-title,
   .hero-background p,
   .dedication-text-add-on-font-size {
-    font-size: 18px!important;
+    font-size: 19px!important;
   }
   .cart-info .wd-entities-title {
-    font-size: 16px!important;
+    font-size: 17px!important;
   }
   .product_title.wd-entities-title,
   .product-image-summary-inner .price,
   .summary-add-to-cart-form-mnm .price {
-    font-size: 24px!important;
+    font-size: 25px!important;
   }
 }
 
@@ -652,7 +652,7 @@ li .product-thumbnail .mnm_child_product_images {
 }
 
 .mnm_form .mnm_child_products li  .product-details .price {
-  font-size: 18px!important;
+  font-size: 19px!important;
 }
 
 .mnm_form .mnm_child_products li .product-quantity {
@@ -726,7 +726,7 @@ li .product-thumbnail .mnm_child_product_images {
 
  .product-allergens-details .data-container span {
   font-style: italic;
-  font-size: 12px;
+  font-size: 13px;
  }
 
 @media (min-width: 768px) {
