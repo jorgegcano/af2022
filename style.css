@@ -244,7 +244,7 @@ flex-direction: row;
 }
 
 .google-map-container {
-position: inherit;
+position: inherit!important;
 }
 /***********************/
 
