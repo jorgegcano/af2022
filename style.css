@@ -246,6 +246,16 @@ flex-direction: row;
 .google-map-container {
 position: inherit!important;
 }
+
+.gm-style-iw-d h3 {
+  min-width: unset!important;
+  margin: 0!important;
+}
+
+.gm-style-iw-d > div {
+  font-weight: 500!important
+}
+
 /***********************/
 
 /*Tienda*/
