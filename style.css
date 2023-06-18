@@ -74,6 +74,7 @@ p,
 .shipping-info-header-banner,
 .wd-entities-title,
 .hero-background p,
+#contact-page p,
 .dedication-text-add-on-font-size {
   font-size: 17px!important;
 }
@@ -86,6 +87,7 @@ p,
   .woocommerce-Tabs-panel--description p,
   .shipping-info-header-banner,
   .wd-entities-title,
+  #contact-page p,
   .hero-background p,
   .dedication-text-add-on-font-size {
     font-size: 17px!important;
@@ -98,6 +100,7 @@ p,
   .woocommerce-Tabs-panel--description p,
   .wd-entities-title,
   .hero-background p,
+  #contact-page p,
   .dedication-text-add-on-font-size {
     font-size: 19px!important;
   }
