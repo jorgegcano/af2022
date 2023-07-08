@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.70' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.71' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -149,43 +149,59 @@ add_filter ('woocommerce_states', 'ejr_definir_provincias');
 // Our hooked in function - $address_fields is passed via the filter!
  function custom_override_default_address_fields( $address_fields ) {
 
-     $chosen_methods = WC()->session->get( 'chosen_shipping_methods' ); // Método de envío seleccionado
-     if(isset($chosen_methods)) {
-         $chosen_method = explode(':', reset($chosen_methods) );  
-         if (substr( $chosen_method[0], 0, 12 ) === "local_pickup") {
-            $address_fields['address_1']['required'] = false;
-            $address_fields['address_1']['class'] = array( 'd-none');
-            $address_fields['address_2']['required'] = false;
-            $address_fields['address_2']['class'] = array( 'd-none');
-            $address_fields['city']['required'] = false;
-            $address_fields['city']['class'] = array( 'd-none');
-            $address_fields['state']['required'] = false;
-            $address_fields['state']['class'] = array( 'd-none');
-            $address_fields['postcode']['required'] = false;
-            if(!is_cart()) {
-                $address_fields['postcode']['class'] = array( 'd-none hide-hook');
-            }
-            $address_fields['country']['required'] = false;
-            $address_fields['country']['class'] = array( 'd-none');
-        } else {
-            $address_fields['address_1']['required'] = true;
-            $address_fields['address_2']['required'] = false;
-            $address_fields['city']['required'] = true;
-            $address_fields['state']['required'] = true;
-            $address_fields['postcode']['required'] = true;
-        }
-    } else {
-            $address_fields['address_1']['required'] = false;
-            $address_fields['address_1']['class'] = array( 'd-none');
-            $address_fields['address_2']['required'] = false;
-            $address_fields['address_2']['class'] = array( 'd-none');
-            $address_fields['city']['required'] = false;
-            $address_fields['city']['class'] = array( 'd-none');
-            $address_fields['state']['required'] = false;
-            $address_fields['state']['class'] = array( 'd-none');
-            $address_fields['postcode']['required'] = false;
-            $address_fields['postcode']['class'] = array( 'd-none');
-    }
+    //  $chosen_methods = WC()->session->get( 'chosen_shipping_methods' ); // Método de envío seleccionado
+    //  if(isset($chosen_methods)) {
+    //      $chosen_method = explode(':', reset($chosen_methods) );  
+    //      if (substr( $chosen_method[0], 0, 12 ) === "local_pickup") {
+    //         $address_fields['address_1']['required'] = false;
+    //         $address_fields['address_1']['class'] = array( 'd-none');
+    //         $address_fields['address_2']['required'] = false;
+    //         $address_fields['address_2']['class'] = array( 'd-none');
+    //         $address_fields['city']['required'] = false;
+    //         $address_fields['city']['class'] = array( 'd-none');
+    //         $address_fields['state']['required'] = false;
+    //         $address_fields['state']['class'] = array( 'd-none');
+    //         $address_fields['postcode']['required'] = false;
+    //         if(!is_cart()) {
+    //             $address_fields['postcode']['class'] = array( 'd-none hide-hook');
+    //         }
+    //         $address_fields['country']['required'] = false;
+    //         $address_fields['country']['class'] = array( 'd-none');
+    //     } else {
+    //         $address_fields['address_1']['required'] = true;
+    //         $address_fields['address_2']['required'] = false;
+    //         $address_fields['city']['required'] = true;
+    //         $address_fields['state']['required'] = true;
+    //         $address_fields['postcode']['required'] = true;
+    //     }
+    // } else {
+    //         $address_fields['address_1']['required'] = false;
+    //         $address_fields['address_1']['class'] = array( 'd-none');
+    //         $address_fields['address_2']['required'] = false;
+    //         $address_fields['address_2']['class'] = array( 'd-none');
+    //         $address_fields['city']['required'] = false;
+    //         $address_fields['city']['class'] = array( 'd-none');
+    //         $address_fields['state']['required'] = false;
+    //         $address_fields['state']['class'] = array( 'd-none');
+    //         $address_fields['postcode']['required'] = false;
+    //         $address_fields['postcode']['class'] = array( 'd-none');
+    // }
+
+    $address_fields['address_1']['required'] = false;
+    $address_fields['address_1']['class'] = array( 'd-none');
+    $address_fields['address_2']['required'] = false;
+    $address_fields['address_2']['class'] = array( 'd-none');
+    $address_fields['city']['required'] = false;
+    $address_fields['city']['class'] = array( 'd-none');
+    $address_fields['state']['required'] = false;
+    $address_fields['state']['class'] = array( 'd-none');
+    $address_fields['postcode']['required'] = false;
+    // if(!is_cart()) {
+    //     $address_fields['postcode']['class'] = array( 'd-none hide-hook');
+    // }
+    $address_fields['country']['required'] = false;
+    $address_fields['country']['class'] = array( 'd-none');
+
     return $address_fields;
  }
  add_filter( 'woocommerce_default_address_fields' , 'custom_override_default_address_fields' );

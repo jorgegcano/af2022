@@ -244,6 +244,10 @@ flex-direction: row;
   .home .info-box-wrapper:not(:first-of-type){
     border-left: 3px solid #EFEFEF;
   }
+
+  .only-one-product-grid-view-home .product-element-top{
+    max-height: 480px;
+  }
 }
 
 .google-map-container {
