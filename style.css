@@ -245,8 +245,8 @@ flex-direction: row;
     border-left: 3px solid #EFEFEF;
   }
 
-  .only-one-product-grid-view-home .product-element-top{
-    max-height: 480px;
+  .only-one-product-grid-home-view .product_cat-donuts .product-element-top{
+    max-height: 480px!important;
   }
 }
 
