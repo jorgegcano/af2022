@@ -69,8 +69,8 @@ function add_nutritional_info()
             </tr>
             <?php if (!empty(get_field('informacion_nutricional')['observaciones'])) { ?>
                 <tr>
-                <td colspan="2" style="font-size:12px;padding:5px 15px;font-style:italic;">
-                    <span style="color:red;">*</span><?php echo get_field('informacion_nutricional')['observaciones']; ?>
+                <td colspan="2" style="font-size:12px;padding:5px 15px;font-style:italic;color: white; background-color:#EE6F58">
+                    <span style="color:white;">*</span><?php echo get_field('informacion_nutricional')['observaciones']; ?>
                 </td>
             </tr> <?php 
             } ?>
