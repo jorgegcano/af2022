@@ -236,6 +236,17 @@ flex-direction: row;
   padding: 20px 10%!important;
 }
 
+@media (min-width: 768px) { 
+  .only-one-product-grid-home-view {
+    display: flex;
+    justify-content: center;
+  }
+
+  .only-one-product-grid-home-view .product-element-top{
+    max-width: 293.5px;
+  }
+}
+
 @media (min-width: 991px) { 
 
   .info-box-container>div>div {
@@ -249,10 +260,6 @@ flex-direction: row;
 
   .home .info-box-wrapper:not(:first-of-type){
     border-left: 3px solid #EFEFEF;
-  }
-
-  .only-one-product-grid-home-view .product-element-top{
-    max-height: 450px;
   }
 }
 
