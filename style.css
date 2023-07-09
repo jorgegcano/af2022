@@ -75,6 +75,7 @@ p,
 .wd-entities-title,
 .hero-background p,
 #contact-page p,
+.allergens-page p,
 .dedication-text-add-on-font-size {
   font-size: 17px!important;
 }
@@ -89,6 +90,7 @@ p,
   .wd-entities-title,
   #contact-page p,
   .hero-background p,
+  .allergens-page p,
   .dedication-text-add-on-font-size {
     font-size: 17px!important;
   }
@@ -101,6 +103,7 @@ p,
   .wd-entities-title,
   .hero-background p,
   #contact-page p,
+  .allergens-page p,
   .dedication-text-add-on-font-size {
     font-size: 19px!important;
   }
