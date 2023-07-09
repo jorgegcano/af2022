@@ -3,7 +3,7 @@
  * Enqueue script and styles for child theme
  */
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.75' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), '7.76' );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -69,7 +69,7 @@ function add_nutritional_info()
             </tr>
             <?php if (!empty(get_field('informacion_nutricional')['observaciones'])) { ?>
                 <tr>
-                <td colspan="2" style="font-size:12px;padding:5px 15px;font-style:italic;color: white; background-color:#EE6F58">
+                <td colspan="2" style="font-size:12px;padding:5px 15px;font-style:italic;color: white; background-color:#FABD77">
                     <span style="color:white;">*</span><?php echo get_field('informacion_nutricional')['observaciones']; ?>
                 </td>
             </tr> <?php 

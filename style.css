@@ -71,6 +71,7 @@ p,
 .soivigol-popup-inner-subtitle span:last-child,
 .woocommerce-product-details__short-description p,
 .woocommerce-Tabs-panel--description p,
+.term-description p,
 .shipping-info-header-banner,
 .wd-entities-title,
 .hero-background p,
@@ -86,6 +87,7 @@ p,
   .soivigol-popup-inner-subtitle span:last-child,
   .woocommerce-product-details__short-description p,
   .woocommerce-Tabs-panel--description p,
+  .term-description p,
   .shipping-info-header-banner,
   .wd-entities-title,
   #contact-page p,
@@ -100,6 +102,7 @@ p,
   .home p,
   .woocommerce-product-details__short-description p,
   .woocommerce-Tabs-panel--description p,
+  .term-description p,
   .wd-entities-title,
   .hero-background p,
   #contact-page p,
@@ -314,6 +317,18 @@ margin-bottom: 40px!important;
 .tax-product_cat .main-page-wrapper {
   margin-top: 40px;
 }
+
+.term-sin-gluten .term-description {
+  background: var(--afYellowOriginal);
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.term-description p {
+  margin: 0;
+}
+
 
 /*Carrito*/
 .woocommerce-info a {
