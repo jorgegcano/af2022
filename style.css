@@ -77,6 +77,7 @@ p,
 .hero-background p,
 #contact-page p,
 .allergens-page p,
+.qe-faq-toggle,
 .dedication-text-add-on-font-size {
   font-size: 17px!important;
 }
@@ -93,6 +94,7 @@ p,
   #contact-page p,
   .hero-background p,
   .allergens-page p,
+  .qe-faq-toggle,
   .dedication-text-add-on-font-size {
     font-size: 17px!important;
   }
@@ -107,6 +109,7 @@ p,
   .hero-background p,
   #contact-page p,
   .allergens-page p,
+  .qe-faq-toggle,
   .dedication-text-add-on-font-size {
     font-size: 19px!important;
   }
@@ -236,6 +239,32 @@ flex-direction: row;
   padding: 20px 10%!important;
 }
 
+.wd-slide-container {
+  background-color: rgba(0,0,0,0.15);
+}
+
+.wd-slide-inner {
+  position: inherit!important;
+}
+
+.x-slide-content {
+  position:absolute; 
+  left:15px; 
+  bottom: 0;
+}
+
+.flickity-button {
+  background-color: var(--afPurpleOriginal)!important;
+}
+
+.arrows-style-3 .flickity-button:after {
+color: var(--white);
+}
+
+.slide-content h2{
+  font-size: 28px; 
+}
+
 @media (min-width: 768px) { 
   .only-one-product-grid-home-view {
     display: flex;
@@ -248,6 +277,10 @@ flex-direction: row;
 }
 
 @media (min-width: 991px) { 
+
+  .slide-content h2{
+    font-size: 55px; 
+  }
 
   .info-box-container>div>div {
     display: flex;
@@ -459,10 +492,7 @@ tfoot tr:last-child th {
   border-radius: 5px!important;
 }
 
-#hero-icon span:hover {
-  cursor: pointer;
-}
-
+/*
 #hero-icon div {
   -webkit-animation: bounce 3s infinite;
   animation: bounce 3s infinite;
@@ -473,6 +503,7 @@ tfoot tr:last-child th {
   50%  { transform: translateY(30px); }
   100% { transform: translateY(0); }
 }
+*/
 
 .view-details-btn {
   border-top-right-radius: 5px!important;
