@@ -50,7 +50,7 @@ body {
   box-sizing: inherit;
 }
 
-p,
+p:not(.title),
 .font-alt,
 .title-alt {
   font-family: var(--fuenteSecundaria) !important;
